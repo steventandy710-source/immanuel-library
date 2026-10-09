@@ -1,8 +1,6 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['ubah_profil'])) {
-  echo "Akses tidak valid.";
-  return;
-}
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  if (isset($_POST['ubah_profil'])) {
 if (isset($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['address'], $_POST['bio'])) {
   echo "Perubahan profil berhasil diterima:<br>";
   echo "<pre>";
@@ -10,4 +8,12 @@ if (isset($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['address'], $
   echo "</pre>";
 } else {
   echo "Data profil tidak lengkap.";
+}
+  } else {
+    echo "Akses tidak valid.";
+    return;
+  }
+} else {
+  echo "Akses tidak valid.";
+  return;
 }

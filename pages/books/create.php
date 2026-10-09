@@ -8,16 +8,16 @@
 </head>
 <body>
   <?php
-  require '../../repositories/category-repository.php';
-  require '../../repositories/author-repository.php';
+  include_once '../../repositories/category-repository.php';
+  include_once '../../repositories/author-repository.php';
   $categories = getCategories();
   $authors = getAuthors();
   ?>
   <div class="app-shell">
-  <?php require '../../components/admin/sidebar.php'; ?>
+  <?php include_once '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    <?php $pageTitle = 'Tambah Buku'; $pageSubtitle = 'Lengkapi data buku, kategori, dan penulis'; require '../../components/admin/topbar.php'; ?>
+    <?php $pageTitle = 'Tambah Buku'; $pageSubtitle = 'Lengkapi data buku, kategori, dan penulis'; include_once '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
         <form method="POST" action="../../actions/books/store.php">

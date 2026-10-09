@@ -9,7 +9,7 @@
 <body>
   <?php
   require '../../repositories/category-repository.php';
-  $categories = getCategories();
+  $daftarKategori = getCategories();
   ?>
   <div class="app-shell">
   <?php require '../../components/admin/sidebar.php'; ?>
@@ -40,20 +40,20 @@
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($categories as $category): ?>
+              <?php foreach ($daftarKategori as $k => $kat): ?>
               <tr>
                 <td>
                   <div class="cell-primary">
                     <span class="cell-thumb"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></span>
-                    <?= $category['name'] ?>
+                    <?= $kat['name'] ?>
                   </div>
                 </td>
-                <td><?= $category['description'] ?></td>
-                <td><span class="badge badge-muted"><?= $category['total_books'] ?> buku</span></td>
+                <td><?= $kat['description'] ?></td>
+                <td><span class="badge badge-muted"><?= $kat['total_books'] ?> buku</span></td>
                 <td>
                   <div class="cell-actions">
-                    <a href="edit.php?id=<?= $category['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                    <a href="../../actions/categories/destroy.php?id=<?= $category['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus kategori ini?')">Hapus</a>
+                    <a href="edit.php?id=<?= $kat['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
+                    <a href="../../actions/categories/destroy.php?id=<?= $kat['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus kategori ini?')">Hapus</a>
                   </div>
                 </td>
               </tr>

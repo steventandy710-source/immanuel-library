@@ -9,7 +9,7 @@
 <body>
   <?php
   require '../../repositories/user-repository.php';
-  $users = getUsers();
+  $daftarPengguna = getUsers();
   ?>
   <div class="app-shell">
   <?php require '../../components/admin/sidebar.php'; ?>
@@ -40,7 +40,7 @@
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($users as $user): ?>
+              <?php for ($n = 0; $n < count($daftarPengguna); $n++) { $user = $daftarPengguna[$n]; ?>
               <tr>
                 <td>
                   <div class="cell-primary">
@@ -63,7 +63,7 @@
                   </div>
                 </td>
               </tr>
-              <?php endforeach; ?>
+              <?php } ?>
             </tbody>
           </table>
         </div>

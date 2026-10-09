@@ -8,8 +8,8 @@
 </head>
 <body>
   <?php
-  require '../../repositories/author-repository.php';
-  $authors = getAuthors();
+  include_once '../../repositories/author-repository.php';
+  $sisa = getAuthors();
   ?>
   <div class="app-shell">
   <?php require '../../components/admin/sidebar.php'; ?>
@@ -39,23 +39,23 @@
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($authors as $author): ?>
+              <?php while ($baris = array_shift($sisa)): ?>
               <tr>
                 <td>
                   <div class="cell-primary">
                     <span class="cell-thumb"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
-                    <?= $author['name'] ?>
+                    <?= $Authors['name'] ?>
                   </div>
                 </td>
-                <td><span class="badge badge-muted"><?= $author['total_books'] ?> buku</span></td>
+                <td><span class="badge badge-muted"><?= $baris['total_books'] ?> buku</span></td>
                 <td>
                   <div class="cell-actions">
-                    <a href="edit.php?id=<?= $author['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                    <a href="../../actions/authors/destroy.php?id=<?= $author['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus penulis ini?')">Hapus</a>
+                    <a href="edit.php?id=<?= $baris['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
+                    <a href="../../actions/authors/destroy.php?id=<?= $baris['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus penulis ini?')">Hapus</a>
                   </div>
                 </td>
               </tr>
-              <?php endforeach; ?>
+              <?php endwhile; ?>
             </tbody>
           </table>
         </div>

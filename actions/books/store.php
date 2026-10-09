@@ -1,8 +1,6 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['tambah_buku'])) {
-  echo "Akses tidak valid.";
-  return;
-}
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  if (isset($_POST['tambah_buku'])) {
 if (isset($_POST['title'], $_POST['isbn'], $_POST['year'], $_POST['stock'], $_POST['category_id'], $_POST['description'])) {
   $data = [
     'title' => $_POST['title'],
@@ -19,4 +17,12 @@ if (isset($_POST['title'], $_POST['isbn'], $_POST['year'], $_POST['stock'], $_PO
   echo "</pre>";
 } else {
   echo "Data buku tidak lengkap.";
+}
+  } else {
+    echo "Akses tidak valid.";
+    return;
+  }
+} else {
+  echo "Akses tidak valid.";
+  return;
 }

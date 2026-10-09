@@ -10,8 +10,8 @@
 
 <body>
   <?php
-  require '../../repositories/book-repository.php';
-  $books = getBooks();
+  include '../../repositories/book-repository.php';
+  $daftarBuku = getBooks();
   ?>
   <div class="app-shell">
     <?php require '../../components/admin/sidebar.php'; ?>
@@ -54,7 +54,7 @@
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($books as $book): ?>
+              <?php for ($i = 0; $i < count($daftarBuku); $i++) { $item = $daftarBuku[$i]; ?>
               <tr>
                 <td>
                   <div class="cell-primary">
@@ -63,26 +63,26 @@
                         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
                         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" />
                       </svg></span>
-                    <a href="show.php?id=<?= $book['id'] ?>" style="color:inherit;"><?= $book['title'] ?></a>
+                    <a href="show.php?id=<?= $item['id'] ?>" style="color:inherit;"><?= $item['title'] ?></a>
                   </div>
                 </td>
-                <td><span class="badge badge-muted"><?= $book['category'] ?></span></td>
+                <td><span class="badge badge-muted"><?= $item['category'] ?></span></td>
                 <td>
                   <div class="chip-list">
-                    <?php foreach ((array) $book['authors'] as $authorName): ?>
-                    <span class="chip"><?= $authorName ?></span>
-                    <?php endforeach; ?>
+                    <?php for ($j = 0; $j < count((array) $item['authors']); $j++) { $nama = $item['authors'][$j]; ?>
+                    <span class="chip"><?= $nama ?></span>
+                    <?php } ?>
                   </div>
                 </td>
-                <td><?= $book['stock'] ?></td>
+                <td><?= $item['stock'] ?></td>
                 <td>
                   <div class="cell-actions">
-                    <a href="edit.php?id=<?= $book['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                    <a href="../../actions/books/destroy.php?id=<?= $book['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus buku ini?')">Hapus</a>
+                    <a href="edit.php?id=<?= $item['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
+                    <a href="../../actions/books/destroy.php?id=<?= $item['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus buku ini?')">Hapus</a>
                   </div>
                 </td>
               </tr>
-              <?php endforeach; ?>
+              <?php } ?>
             </tbody>
           </table>
         </div>

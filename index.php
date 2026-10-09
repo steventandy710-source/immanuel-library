@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <?php require_once 'components/landing/header.php'; ?>
+  <?php include_once __DIR__ . '/components/landing/header.php'; ?>
 
   <!-- ============ HERO ============ -->
   <section class="hero">
@@ -96,7 +96,7 @@
       </div>
     </div>
   </section>
-  <?php require_once 'components/landing/footer.php'; ?>
+  <?php include_once __DIR__ . '/components/landing/footer.php'; ?>
 </body>
 
 </html>

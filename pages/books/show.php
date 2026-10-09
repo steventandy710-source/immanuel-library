@@ -8,14 +8,14 @@
 </head>
 <body>
   <?php
-  require '../../repositories/book-repository.php';
+  include_once '../../repositories/book-repository.php';
   $book = getBook();
   ?>
   <div class="app-shell">
-  <?php require '../../components/admin/sidebar.php'; ?>
+  <?php include_once '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    <?php $pageTitle = 'Detail Buku'; $pageSubtitle = 'Informasi lengkap buku beserta kategori dan penulis'; require '../../components/admin/topbar.php'; ?>
+    <?php $pageTitle = 'Detail Buku'; $pageSubtitle = 'Informasi lengkap buku beserta kategori dan penulis'; include_once '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
         <div class="detail-grid">
