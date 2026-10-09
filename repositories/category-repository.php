@@ -1,5 +1,6 @@
 <?php
 
+// nyiapin list kategori dummy buat dropdown sama tabel
 function getCategories() {
   return [
     ["id" => 1, "name" => "Fiksi", "description" => "Novel dan cerita rekaan", "total_books" => 3],
@@ -9,6 +10,7 @@ function getCategories() {
   ];
 }
 
+// comot satu kategori dummy buat form edit
 function getCategory() {
   return ["id" => 1, "name" => "Fiksi", "description" => "Novel dan cerita rekaan", "total_books" => 3];
 }
