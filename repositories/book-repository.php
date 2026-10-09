@@ -1,5 +1,6 @@
 <?php
 
+// nyiapin list buku dummy biar tabel katalog ada isinya
 function getBooks() {
   return [
     ["id" => 1, "title" => "Laskar Pelangi", "category" => "Fiksi", "year" => 2005, "stock" => 12, "authors" => ["Andrea Hirata"]],
@@ -10,6 +11,7 @@ function getBooks() {
   ];
 }
 
+// comot satu buku dummy buat halaman detail sama edit
 function getBook() {
   return [
     "id" => 5,
