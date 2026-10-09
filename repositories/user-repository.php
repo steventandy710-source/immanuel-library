@@ -1,5 +1,6 @@
 <?php
 
+// nyiapin list akun dummy biar tabel pengguna ada isinya
 function getUsers() {
   return [
     ["id" => 1, "name" => "Admin Utama", "email" => "admin@ski.sch.id", "role" => "admin"],
@@ -9,10 +10,12 @@ function getUsers() {
   ];
 }
 
+// comot satu akun dummy buat form edit
 function getUser() {
   return ["id" => 2, "name" => "Budi Santoso", "email" => "budi.santoso@siswa.ski.sch.id", "role" => "member"];
 }
 
+// comot data profil dummy buat form profil saya
 function getProfile() {
   return ["user_id" => 2, "phone" => "0812-3456-7890", "address" => "Jl. Merdeka No. 21, Pontianak, Kalimantan Barat", "bio" => "Murid kelas XI TKJ yang gemar membaca novel fiksi dan buku pengembangan diri."];
 }
