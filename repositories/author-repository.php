@@ -1,5 +1,6 @@
 <?php
 
+// nyiapin list penulis dummy buat checkbox sama tabel
 function getAuthors() {
   return [
     ["id" => 1, "name" => "Andrea Hirata", "bio" => "Penulis asal Belitung, dikenal lewat novel Laskar Pelangi.", "total_books" => 1],
@@ -10,6 +11,7 @@ function getAuthors() {
   ];
 }
 
+// comot satu penulis dummy buat form edit
 function getAuthor() {
   return ["id" => 1, "name" => "Andrea Hirata", "bio" => "Penulis asal Belitung, dikenal lewat novel Laskar Pelangi.", "total_books" => 1];
 }
